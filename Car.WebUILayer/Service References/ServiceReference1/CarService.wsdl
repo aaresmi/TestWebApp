@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CarService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50503/CarService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50503/CarService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Car.ServiceLayer" />
+      <xsd:import schemaLocation="http://localhost:50503/CarService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50503/CarService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Car.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICarService_RetrieveAllCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAllCars" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_RetrieveAllCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAllCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_RetrieveAllCars_CarServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Car.ServiceLayer" name="detail" element="q1:CarServiceError" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_RetrieveAllCarsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAllCarsDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_RetrieveAllCarsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAllCarsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_RetrieveAllCarsDetails_CarServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Car.ServiceLayer" name="detail" element="q2:CarServiceError" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_AddACar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddACar" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_AddACar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddACarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICarService_AddACar_CarServiceErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Car.ServiceLayer" name="detail" element="q3:CarServiceError" />
+  </wsdl:message>
+  <wsdl:portType name="ICarService">
+    <wsdl:operation name="RetrieveAllCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCars" message="tns:ICarService_RetrieveAllCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCarsResponse" message="tns:ICarService_RetrieveAllCars_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCarsCarServiceErrorFault" name="CarServiceErrorFault" message="tns:ICarService_RetrieveAllCars_CarServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllCarsDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCarsDetails" message="tns:ICarService_RetrieveAllCarsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCarsDetailsResponse" message="tns:ICarService_RetrieveAllCarsDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICarService/RetrieveAllCarsDetailsCarServiceErrorFault" name="CarServiceErrorFault" message="tns:ICarService_RetrieveAllCarsDetails_CarServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddACar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICarService/AddACar" message="tns:ICarService_AddACar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICarService/AddACarResponse" message="tns:ICarService_AddACar_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICarService/AddACarCarServiceErrorFault" name="CarServiceErrorFault" message="tns:ICarService_AddACar_CarServiceErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICarService" type="tns:ICarService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveAllCars">
+      <soap:operation soapAction="http://tempuri.org/ICarService/RetrieveAllCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CarServiceErrorFault">
+        <soap:fault use="literal" name="CarServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllCarsDetails">
+      <soap:operation soapAction="http://tempuri.org/ICarService/RetrieveAllCarsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CarServiceErrorFault">
+        <soap:fault use="literal" name="CarServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddACar">
+      <soap:operation soapAction="http://tempuri.org/ICarService/AddACar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CarServiceErrorFault">
+        <soap:fault use="literal" name="CarServiceErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CarService">
+    <wsdl:port name="BasicHttpBinding_ICarService" binding="tns:BasicHttpBinding_ICarService">
+      <soap:address location="http://localhost:50503/CarService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

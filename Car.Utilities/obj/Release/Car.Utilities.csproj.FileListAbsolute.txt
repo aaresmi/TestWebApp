@@ -1,0 +1,6 @@
+C:\webapp_test\Car.Utilities\bin\Release\Car.Utilities.dll
+C:\webapp_test\Car.Utilities\bin\Release\Car.Utilities.pdb
+C:\webapp_test\Car.Utilities\obj\Release\Car.Utilities.csproj.AssemblyReference.cache
+C:\webapp_test\Car.Utilities\obj\Release\Car.Utilities.csproj.CoreCompileInputs.cache
+C:\webapp_test\Car.Utilities\obj\Release\Car.Utilities.dll
+C:\webapp_test\Car.Utilities\obj\Release\Car.Utilities.pdb

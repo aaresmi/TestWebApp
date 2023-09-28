@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\webapp_test\Car.WebUILayer\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2023-09-28T05:57:19.9004123Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AddCar.aspx">
+      <publishTime>09/28/2023 07:33:29</publishTime>
+    </File>
+    <File Include="bin/Car.Entities.dll">
+      <publishTime>09/28/2023 07:57:18</publishTime>
+    </File>
+    <File Include="bin/Car.Entities.pdb">
+      <publishTime>09/28/2023 07:57:18</publishTime>
+    </File>
+    <File Include="bin/Car.WebUILayer.dll">
+      <publishTime>09/28/2023 07:57:19</publishTime>
+    </File>
+    <File Include="bin/Car.WebUILayer.pdb">
+      <publishTime>09/28/2023 07:57:19</publishTime>
+    </File>
+    <File Include="HomePage.aspx">
+      <publishTime>09/28/2023 07:33:29</publishTime>
+    </File>
+    <File Include="RetirveCarDetails.aspx">
+      <publishTime>09/28/2023 07:33:29</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/28/2023 07:57:19</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
