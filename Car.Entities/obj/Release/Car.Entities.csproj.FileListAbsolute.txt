@@ -1,6 +1,0 @@
-C:\webapp_test\Car.Entities\bin\Release\Car.Entities.dll
-C:\webapp_test\Car.Entities\bin\Release\Car.Entities.pdb
-C:\webapp_test\Car.Entities\obj\Release\Car.Entities.csproj.AssemblyReference.cache
-C:\webapp_test\Car.Entities\obj\Release\Car.Entities.csproj.CoreCompileInputs.cache
-C:\webapp_test\Car.Entities\obj\Release\Car.Entities.dll
-C:\webapp_test\Car.Entities\obj\Release\Car.Entities.pdb
